@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia de Indicação Patrimonial</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Paleta de Cores e Fontes extraída de proposta-alliance.html */
+      :root {
+        --primary-color: #0d1b2a; /* Azul muito escuro */
+        --secondary-color: #00cec9; /* Teal / Ciano (Cor de destaque) */
+        --bg-light-primary: #ffffff;
+        --bg-light-secondary: #f3f4f6; /* Cinza bem claro */
+        --text-light-primary: #f3f4f6;
+        --text-dark-primary: #1a202c;
+        --text-dark-secondary: #4a5568;
+        --border-color-light: #e2e8f0;
+        --font-primary: "Montserrat", "Segoe UI", sans-serif;
+        --font-secondary: "Lato", "Segoe UI", sans-serif;
+      }
+
+      body {
+        font-family: var(--font-secondary);
+        margin: 0;
+        padding: 0;
+        background-color: #e2e8f0; /* Fundo neutro para destacar o container */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px 0;
+      }
+
+      .container {
+        display: flex;
+        width: 900px;
+        max-width: 95%;
+        min-height: 800px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        background-color: var(--bg-light-secondary);
+      }
+
+      .sidebar {
+        background-color: var(--primary-color);
+        color: var(--text-light-primary);
+        padding: 40px 30px;
+        width: 38%;
+        box-sizing: border-box;
+      }
+
+      .sidebar .logo-placeholder {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 40px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--secondary-color);
+        border-radius: 16px;
+        transform: rotate(45deg);
+        background-color: rgba(0, 206, 201, 0.1);
+      }
+
+      .sidebar .logo-text {
+        font-family: var(--font-primary);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-light-primary);
+        transform: rotate(-45deg);
+      }
+
+      .sidebar .logo-text span {
+        color: var(--secondary-color);
+      }
+
+      .sidebar h2 {
+        font-family: var(--font-primary);
+        color: white;
+        border-bottom: 1px solid #334155;
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .sidebar p,
+      .sidebar li {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-light-primary);
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .sidebar ul li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+      }
+
+      .sidebar ul li::before {
+        content: "▸";
+        color: var(--secondary-color);
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 12px;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .sidebar ul ul {
+        padding-left: 20px;
+        margin-top: 8px;
+      }
+      .sidebar ul ul li::before {
+        content: "–";
+        color: var(--text-light-primary);
+      }
+
+      .main-content {
+        background-color: var(--bg-light-secondary);
+        padding: 40px;
+        width: 62%;
+        box-sizing: border-box;
+        color: var(--text-dark-primary);
+      }
+
+      .main-content .header h1 {
+        font-family: var(--font-primary);
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: 5px;
+        font-weight: 700;
+        color: var(--text-dark-primary);
+      }
+
+      .main-content .header .highlight {
+        color: var(--secondary-color);
+        font-weight: 700;
+      }
+
+      .main-content hr {
+        border: 0;
+        border-top: 1px solid var(--border-color-light);
+        margin: 35px 0;
+      }
+
+      .main-content h2 {
+        font-family: var(--font-primary);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text-dark-primary);
+        margin-bottom: 20px;
+      }
+
+      .main-content .section-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        background-color: var(--bg-light-primary);
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid var(--secondary-color);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .main-content .section-item p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        font-style: italic;
+        color: var(--text-dark-secondary);
+      }
+
+      .main-content ol {
+        padding-left: 20px;
+        font-size: 16px;
+        line-height: 2;
+        color: var(--text-dark-secondary);
+      }
+
+      .main-content ol li::marker {
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      .main-content blockquote {
+        background-color: white;
+        border-left: 4px solid var(--primary-color);
+        padding: 20px;
+        margin-top: 30px;
+        font-style: italic;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .main-content blockquote p {
+        margin: 0;
+        font-size: 15px;
+        color: var(--text-dark-secondary);
+      }
+      .main-content blockquote p strong {
+        color: var(--text-dark-primary);
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo-placeholder">
+          <div class="logo-text">W<span>1</span></div>
+        </div>
+
+        <h2>Perfil do Lead Ideal</h2>
+        <p>Indique se o cliente:</p>
+        <ul>
+          <li>
+            Tem patrimônio relevante (empresa, imóveis, investimentos, etc.)
+          </li>
+          <li>Está preocupado com sucessão familiar ou proteção de bens</li>
+          <li>Tem receio de pagar muito imposto em inventários ou doações</li>
+          <li>
+            Já falou algo como:
+            <ul>
+              <li>“Quero proteger meu patrimônio.”</li>
+              <li>“Não quero deixar problema pros meus filhos.”</li>
+              <li>“Tenho medo de o governo levar tudo.”</li>
+            </ul>
+          </li>
+          <li>É empresário ou profissional liberal bem-sucedido</li>
+          <li>Recebe orientação financeira de médio/longo prazo</li>
+        </ul>
+
+        <h2 style="margin-top: 40px">Por que Vale a Pena</h2>
+        <ul>
+          <li>
+            Você é reconhecido pela indicação (financeiramente e/ou por
+            pontuação interna)
+          </li>
+          <li>Aumenta sua credibilidade com o cliente</li>
+          <li>Fortalece seu relacionamento como um consultor completo</li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <div class="header">
+          <h1>
+            Você conhece alguém assim?<br />Então ele é um
+            <span class="highlight">Lead Patrimonial!</span>
+          </h1>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>O Que a Consultoria Patrimonial Faz</h2>
+          <div class="section-item">
+            <p>
+              Protegemos o patrimônio do cliente de imprevistos, impostos e
+              conflitos familiares.
+            </p>
+          </div>
+          <div class="section-item">
+            <p>
+              Ajudamos a organizar a sucessão, blindagem e estruturação
+              patrimonial.
+            </p>
+          </div>
+          <div class="section-item">
+            <p>
+              Criamos soluções jurídicas e financeiras personalizadas com foco
+              em segurança e eficiência.
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Como Indicar</h2>
+          <ol>
+            <li>Identificou alguém com o perfil acima?</li>
+            <li>
+              Preencha o formulário de indicação
+              <a
+                href="#"
+                style="
+                  color: var(--secondary-color);
+                  font-weight: bold;
+                  text-decoration: none;
+                "
+                >[neste link]</a
+              >.
+            </li>
+            <li>Nós cuidamos do resto com ética e discrição.</li>
+            <li>Você acompanha o status da sua indicação pelo sistema.</li>
+          </ol>
+        </div>
+
+        <blockquote>
+          <p>
+            <strong>Sugestão de Mensagem Pronta:</strong><br />
+            "Fulano, você já pensou em como organizar seu patrimônio de forma
+            protegida e eficiente? Temos um parceiro especializado nisso. Posso
+            te apresentar?"
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </body>
+</html>
